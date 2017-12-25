@@ -1,7 +1,7 @@
 <%-- 
-    Document   : customer
-    Created on : Dec 17, 2017, 3:07:56 AM
-    Author     : Tien
+    Document   : addCategory
+    Created on : Dec 25, 2017, 4:15:33 PM
+    Author     : Clay
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Users</title>
+        <title>Add Category</title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
@@ -29,7 +29,6 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     </head>
     <body>
-
         <div class="wrapper">
             <div class="sidebar" data-color="purple" data-image="../resource/assets/img/sidebar-1.jpg">
                 <!--
@@ -148,98 +147,70 @@
 
                 <div class="content">
                     <div class="container-fluid">
-                        <div class="row" style="text-align: center;">
-                            <a target="_top" href="addCategory.jsp" class="btn-instagram btn">Add Category</a>
-                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header" data-background-color="purple">
-                                        <h4 class="title">Categories</h4>
-                                        <p class="category">Line Tech</p>
+                                        <h4 class="title">Add Category</h4>
+                                        <p class="category">Add a new category</p>
                                     </div>
-                                    <div class="card-content table-responsive">
-                                        <table class="table">
-                                            <thead class="text-primary">
-                                            <th>Name</th>
-                                            <th>Country</th>
-                                            <th>City</th>
-                                            <th>Salary</th>
-                                            <th>Action</th>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Dakota Rice</td>
-                                                    <td>Niger</td>
-                                                    <td>Oud-Turnhout</td>
-                                                    <td class="text-primary">$36,738</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Minerva Hooper</td>
-                                                    <td>Curaçao</td>
-                                                    <td>Sinaai-Waas</td>
-                                                    <td class="text-primary">$23,789</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sage Rodriguez</td>
-                                                    <td>Netherlands</td>
-                                                    <td>Baileux</td>
-                                                    <td class="text-primary">$56,142</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Philip Chaney</td>
-                                                    <td>Korea, South</td>
-                                                    <td>Overland Park</td>
-                                                    <td class="text-primary">$38,735</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Doris Greene</td>
-                                                    <td>Malawi</td>
-                                                    <td>Feldkirchen in Kärnten</td>
-                                                    <td class="text-primary">$63,542</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mason Porter</td>
-                                                    <td>Chile</td>
-                                                    <td>Gloucester</td>
-                                                    <td class="text-primary">$78,615</td>
-                                                    <td><button value="Block" name="txtBlock"/></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
+                                    <div class="card-content">
+                                        <form method="POST" action="../addCategoryServlet">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Category ID</label>
+                                                        <input type="text" name="txtId" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label" style="margin-left: 10px;">Category Name</label>
+                                                        <input type="text" name="txtName" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label" style="margin-left: 10px;">Description</label>
+                                                        <textarea name="txtDes" row="5" cols="100" id="editor" wrap="soft" maxlength="160" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label" style="margin-left: 10px;">Icon URL</label>
+                                                        <input type="text" name="txtIcon" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                            <div class="clearfix"></div>
+                                        </form>
                                     </div>
                                 </div>
-                            </div>
-
+                            </div>          
                         </div>
                     </div>
                 </div>
 
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="pull-left">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        Home
-                                    </a>
-                                </li> 
-                            </ul>
-                        </nav>
-                        <p class="copyright pull-right">
-                            &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Line Tech</a>, made with love for a Group TechLine
-                        </p>
-                    </div>
-                </footer>
             </div>
         </div>
 
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li> 
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Line Tech</a>, made with love for a Group TechLine
+                </p>
+            </div>
+        </footer>
     </body>
 
     <!--   Core JS Files   -->
@@ -261,5 +232,4 @@
 
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="../resource/assets/js/demo.js"></script>
-
 </html>
